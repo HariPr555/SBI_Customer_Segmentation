@@ -45,9 +45,63 @@ The Dataset summarizes the usage behavior of about 9000 active credit card holde
 ## Dimensionality Reduction
 Applying Principal Component Analysis (PCA) can reduce the dataset’s dimensions while retaining the main information, making the clustering process more efficient.
 
+## Algorithm Selection
+Since we aim to create distinct customer segments, KMeans is suitable for this task due to its efficiency with balanced, compact clusters.
+
+## Hyperparameter Tuning
+**Elbow Method**
+- Plot the within-cluster sum of squares (inertia) for different numbers of clusters ( K=1 to K=15). The “elbow” point, where additional clusters yield diminishing returns, indicates the optimal number of clusters.
+
 ![image](https://github.com/user-attachments/assets/8032af52-af19-48ff-b067-f5b55b2f4e71)
 
+## KMeans Clustering
+### **Run KMeans**
+  - Using the selected K (e.g., K=4), run the KMeans model and assign each customer a cluster label.
+### **Cluster Assignment**
+  - Append the cluster labels to the dataset to analyze each segment's characteristics.: Append the cluster labels to the dataset to analyze each segment's characteristics.
+
 ![image](https://github.com/user-attachments/assets/43f0343c-6a4c-487e-a69a-bc07ce5389ed)
+
+## Cluster Profiling & Interpretation
+Identified four customer segments with distinct behaviors:
+- **High-Spenders**
+- **Installment-Focused**
+- **Cash Advance Users**
+- **Low-Usage, High-Payment Discipline**
+
+## High Spenders
+This segment exhibits a preference for making substantial, infrequent purchases. These customers likely have significant purchasing power but may not rely on installment plans or cash advances.
+- **High Total Purchases**: Customers in this segment have elevated one-off purchases, making significant one-time payments.
+- **High Balance**: They tend to maintain high balances, suggesting frequent usage or high-value transactions.
+- **Moderate Credit Utilization**: Their credit utilization indicates active account engagement without reaching maximum limits.
+
+## Installment Focused
+This segment includes reliable, moderate spenders who prefer spreading out payments. They likely prioritize financial planning and may appreciate structured, predictable payment options.
+- **Moderate Purchases & Installment Preference**: Customers in this group show a balanced spending pattern, often preferring installments.
+- **Consistent Payment Behavior**: Their installment frequency indicates they value regular payments and likely maintain a stable income.
+- **Low Cash Advances**: Limited use of cash advances points to relatively stable financial standing and lower risk for sudden liquidity needs.
+
+## Cash Advance Users
+This segment faces more frequent short-term liquidity needs, potentially leading to higher risk. Their reliance on cash advances instead of regular purchases suggests they may be sensitive to financial instability.
+- **High Cash Advance Usage**: This segment relies heavily on cash advances, indicating frequent need for immediate funds.
+- **Low Purchase Frequency**: These customers make fewer purchases overall, relying instead on cash advances for liquidity.
+- **Moderate to High Credit Utilization**: They often utilize a higher portion of their credit limit, indicating financial pressure.
+
+## Low-Usage, High-Payment Discipline
+This low-risk segment has little dependence on credit, maintaining high reliability in payments. Their behaviors suggest a financially secure customer base with little likelihood of default or late payments.
+- **Low Credit Usage**: Customers in this segment maintain low balances and credit usage, indicating minimal reliance on credit.
+- **High Payment Reliability**: They consistently make full or minimum payments, showing high discipline and financial stability.
+
+## Recommendations
+- **High-Spenders**: Target with loyalty programs, credit limit increases, and exclusive offers.
+- **Installment-Focused**: Offer zero-interest installment plans, consistent payment incentives, and long-term financial products.
+- **Cash Advance Users**: Provide financial counseling, low-interest cash advances, or short-term loans to reduce reliance on advances.
+- **Low-Usage, High-Payment Discipline**: Recognize with loyalty rewards, encourage moderate credit use with fee reductions.
+
+## Future Scope
+- **Integration with Predictive Analytics**: Incorporate predictive analytics to forecast customer behavior and enhance engagement strategies.
+- R**eal-time Segmentation**: Develop a real-time segmentation system that updates cluster assignments based on ongoing transaction data.
+- **Cross-Channel Analysis**: Include cross-channel interactions for a comprehensive understanding of customer behaviour and preferences.
 
 
 
